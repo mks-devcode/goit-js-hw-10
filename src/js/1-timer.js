@@ -56,10 +56,10 @@ const startBtn = refs.btnEl.addEventListener('click', () => {
         const minutes = addLeadingZero(timeStr.minutes);
         const seconds = addLeadingZero(timeStr.seconds);        
 
-        refs.daysEl.innerHTML = days;
-        refs.hoursEl.innerHTML = hours;
-        refs.minutesEl.innerHTML = minutes;
-        refs.secondsEl.innerHTML = seconds;
+        refs.daysEl.textContent = days;
+        refs.hoursEl.textContent = hours;
+        refs.minutesEl.textContent = minutes;
+        refs.secondsEl.textContent = seconds;
         
         if (diff < 1000) {
             clearInterval(intervalId)

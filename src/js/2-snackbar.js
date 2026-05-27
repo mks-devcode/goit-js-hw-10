@@ -5,9 +5,9 @@ function createdPromise(data, delay) {
     const promise = new Promise((resolve, reject) => {
         setTimeout(() => {
             if (data === 'fulfilled') {
-                resolve(`✅ Fulfilled promise in ${delay}ms`);
+                resolve(delay);
             } else {
-                reject(`❌ Rejected promise in ${delay}ms`);
+                reject(delay);
             }
         }, delay);
     });
@@ -24,11 +24,11 @@ formEl.addEventListener('submit', (e) => {
     console.log(radioValue);
     createdPromise(radioValue, delay)
         .then(value => iziToast.show({
-        title: value,
+        title: `✅ Fulfilled promise in ${value}ms`,
         position: 'topRight'
 }))
         .catch(error => iziToast.show({
-        title: error,
+        title: `❌ Rejected promise in ${error}ms`,
         position: 'topRight'
 }));
 });

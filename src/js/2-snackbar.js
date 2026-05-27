@@ -6,16 +6,13 @@ function createdPromise(data, delay) {
         setTimeout(() => {
             if (data === 'fulfilled') {
                 resolve(`✅ Fulfilled promise in ${delay}ms`);
-                // console.log(`✅ Fulfilled promise in ${delay}ms`)
             } else {
                 reject(`❌ Rejected promise in ${delay}ms`);
-                // console.log(`❌ Rejected promise in ${delay}ms`)
             }
         }, delay);
     });
     return promise;
 };
-
 
 const formEl = document.querySelector('.form');
 
